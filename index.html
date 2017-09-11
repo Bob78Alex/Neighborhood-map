@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Welcome to Toronto!</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src='js/knockout-3.4.0.js'></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> type="text/javascript"></script>
+	<script src='js/app.js'></script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkmggh8oo8CjdrzzWKM5JGlwkixpVqNAo&v=3&callback=startApp&libraries=places" onerror="errorHandling()"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+	<div class="container" id="container">
+		<div class="app" id="app">
+			<div class="list" id="list">
+				<div class="title" id="title">
+					<h1><strong> FIND YOUR ATTRACTION IN TORONTO!</strong></h1>
+					<hr>
+				</div>
+				<div class="search" id="search">
+					<input class="search-box" id="search-box" placeholder="Search by name ..." data-bind="textInput: searchTerm, valueUpdate: 'afterkeydown'" />
+				</div>
+				<ul class="results" id="results" data-bind="foreach: filteredList">
+					<li class="place" id="place" data-bind="text: name, click: bounce"></li>
+				</ul>
+			</div>
+		</div>
+		<div class="map" id="map">The Google Maps content cannot be uploaded at this time. Please try again later.</div>
+	</div>
+
+</body>
+
+</html>
